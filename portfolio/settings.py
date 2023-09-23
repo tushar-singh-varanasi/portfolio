@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 import environ
 # Initialise environment variables
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-7#qj2-yne+nz=u@1(0$edwh&2^q@k6*)fa#a!mf884demcpqa4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
