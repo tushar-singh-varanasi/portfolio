@@ -21,10 +21,16 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from app import views
 
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('',views.home,name='home'),
+
+# ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# urlpatterns+=staticfiles_urlpatterns()
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home,name='home'),
+    path('', views.home, name='home'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns+=staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns()
