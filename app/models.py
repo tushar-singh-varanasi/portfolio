@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class About(models.Model):
     about=models.TextField()
-    resume=models.FileField(upload_to ='resume/')
+    # resume=models.FileField(upload_to ='resume/')
 
     
 
@@ -12,9 +12,9 @@ class About(models.Model):
 
 class Project(models.Model):
     Name=models.CharField(max_length=100)
-    description=models.CharField(max_length=100)
+    description=models.CharField(max_length=300)
     project_url=models.URLField(max_length=400)
-    image=models.ImageField(upload_to='image/')
+    # image=models.ImageField(upload_to='image/')
 
     def __str__(self):
         return self.Name
